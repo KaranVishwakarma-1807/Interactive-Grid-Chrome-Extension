@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: #0e0e12;
+}
+
+/* Clock */
+#clock {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 84px;
+  font-weight: 200;
+  letter-spacing: -2px;
+}
+
+/* Search */
+#searchForm {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#searchInput {
+  padding: 14px 25px;
+  width: 350px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#searchInput::placeholder { color: rgba(255,255,255,0.5); }
+
+/* Settings Button */
+#settingsBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 8px;
+  border-radius: 25%;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+  z-index: 100;
+}
+
+#settingsBtn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.1);
+}
+
+#settingsBtn:hover img { animation: spin 2s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Panel Styling */
+#settingsPanel {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 240px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(20, 20, 30, 0.7);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#settingsPanel.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#settingsPanel h3 { margin: 0 0 15px 0; font-weight: 500; font-size: 18px; }
+
+#settingsPanel h4 {
+  margin-top: 25px;
+  text-align: center; 
+  font-style: italic; 
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+#settingsPanel label { display: block; margin-top: 15px; font-size: 13px; opacity: 0.7; }
+
+/* Custom Dropdown Styling */
+.custom-select-wrapper { position: relative; margin-top: 8px; }
+
+.custom-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.custom-select:hover { background: rgba(255,255,255,0.1); }
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  transition: 0.3s;
+  margin-bottom: 4px;
+}
+
+.custom-select.open .arrow { transform: rotate(-135deg) translateY(-2px); }
+
+.custom-options {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  right: 0;
+  background: #1c1c24;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: none;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.custom-options.show { display: block; }
+
+.custom-option {
+  padding: 12px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.custom-option:hover { background: #3498db; }
+
+/* Sliders & Buttons */
+#settingsPanel input[type="range"] {
+  width: 100%;
+  margin-top: 8px;
+  appearance: none;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+}
+
+#settingsPanel input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+#resetBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#resetBtn:hover { background: rgba(255, 100, 100, 0.3); }
