@@ -32,7 +32,7 @@ A visually dynamic Chrome New Tab extension built using **p5.js**, featuring an 
 
 > Add a demo GIF here
 
-![Demo](assets/screenshots/demo.gif)
+![Demo](assets/screenshots/demo.mp4)
 
 ---
 
