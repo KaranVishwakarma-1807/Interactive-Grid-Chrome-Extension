@@ -21,8 +21,10 @@ A visually dynamic Chrome New Tab extension built using **p5.js**, featuring an 
 
 > Add your screenshots here
 
-![Screenshot 1](./screenshots/screenshot1.png)
-![Screenshot 2](./screenshots/screenshot2.png)
+![Screenshot 1](assets/screenshots/screenshot1.png)
+![Screenshot 2](assets/screenshots/screenshot2.png)
+![Screenshot 3](assets/screenshots/screenshot3.png)
+![Screenshot 4](assets/screenshots/screenshot4.png)
 
 ---
 
@@ -30,7 +32,7 @@ A visually dynamic Chrome New Tab extension built using **p5.js**, featuring an 
 
 > Add a demo GIF here
 
-![Demo](./screenshots/demo.gif)
+![Demo](assets/screenshots/demo.gif)
 
 ---
 
@@ -94,7 +96,7 @@ grid-extension/
 
 ## Author
 
-Built by Karan Vishwakarma/nas a creative coding + UI experiment using p5.js.
+Built by Karan Vishwakarma\nas a creative coding + UI experiment using p5.js.
 
 ---
 
