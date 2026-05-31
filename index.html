@@ -13,6 +13,16 @@
     <input type="text" id="searchInput" placeholder="Search Google...">
   </form>
 
+  <div id="themeBtn" title="Themes">
+    <img src="assets/theme_logo.svg" alt="Themes" width="24" height="24">
+  </div>
+
+  <div id="themePanel">
+    <h3>Themes</h3>
+    <div id="themeList"></div>
+    <button id="applyThemeBtn">Apply</button>
+  </div>
+
   <div id="settingsBtn">
     <img src="assets/gear_logo.svg" alt="Settings" width="24" height="24">
   </div>
@@ -26,25 +36,16 @@
     <label>Speed</label>
     <input type="range" id="speed" min="0.05" max="0.3" step="0.01">
 
-    <label>Theme</label>
-    <!-- New Custom Dropdown -->
-    <div class="custom-select-wrapper">
-      <div class="custom-select" id="themeSelect">
-        <span id="selectedThemeText">Ocean</span>
-        <div class="arrow"></div>
-      </div>
-      <div class="custom-options" id="themeOptions">
-        <div class="custom-option" data-value="ocean">Ocean</div>
-        <div class="custom-option" data-value="neon">Neon</div>
-        <div class="custom-option" data-value="sunset">Sunset</div>
-      </div>
-    </div>
-
     <button id="resetBtn">Reset</button>
+    <button id="saveSettingsBtn">Save</button>
     <h4>By Karan Vishwakarma</h4>
   </div>
 
   <script src="p5.min.js"></script>
+  <script src="themes/themeRegistry.js"></script>
+  <script src="themes/interactiveGrid.js"></script>
+  <script src="themes/bouncingBall.js"></script>
+  <script src="themes/movingDial.js"></script>
   <script src="sketch.js"></script>
   <script src="ui.js"></script>
 </body>
