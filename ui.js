@@ -14,6 +14,29 @@ document.getElementById("searchForm").addEventListener("submit", (e) => {
   window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
 });
 
+// FULLSCREEN TOGGLE
+const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+fullscreenBtn.addEventListener("click", () => {
+  if (document.fullscreenElement) {
+    fullscreenBtn.classList.remove("fullscreen-entering");
+    fullscreenBtn.classList.add("fullscreen-exiting");
+    document.exitFullscreen();
+  } else {
+    fullscreenBtn.classList.remove("fullscreen-exiting");
+    fullscreenBtn.classList.add("fullscreen-entering");
+    document.documentElement.requestFullscreen();
+  }
+
+  setTimeout(() => {
+    fullscreenBtn.classList.remove("fullscreen-entering", "fullscreen-exiting");
+  }, 260);
+});
+
+document.addEventListener("fullscreenchange", () => {
+  fullscreenBtn.classList.toggle("is-fullscreen", Boolean(document.fullscreenElement));
+});
+
 // SETTINGS TOGGLE
 const settingsBtn = document.getElementById("settingsBtn");
 const settingsPanel = document.getElementById("settingsPanel");

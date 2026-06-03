@@ -1,25 +1,35 @@
 # Interactive Grid Chrome Extension
 
-A visually dynamic Chrome New Tab extension built using **p5.js**, featuring an interactive grid, ripple effects, and customizable UI.
+A creative Chrome New Tab extension built with HTML, CSS, JavaScript, and p5.js. It replaces the default new tab page with animated generative themes, a clock, Google search, theme previews, settings, and a fullscreen toggle.
 
 ---
 
 ## Features
 
-* Mouse-reactive grid system
-* Cinematic ripple effect on click
-* Screen flash feedback
-* Dynamic background colors
-* Minimal clock UI
-* Search bar (Google integration)
-* Settings panel (spacing, speed, themes)
-* Persistent settings using localStorage
+- Animated p5.js themes
+- Theme picker with preview images
+- One-click theme apply flow
+- Persistent saved theme and settings using `localStorage`
+- Frosted-glass clock and search bar
+- Google search integration
+- Settings panel for grid spacing and animation speed
+- Fullscreen toggle with animated icon feedback
+- Modular `themes/` folder for adding new p5.js themes
+
+---
+
+## Included Themes
+
+- Ocean
+- Neon
+- Sunset
+- Bouncing Ball
+- Moving Dial
+- Rotating Blocks
 
 ---
 
 ## Screenshots
-
-> Screenshots
 
 ![Screenshot 1](assets/screenshots/screenshot1.png)
 ![Screenshot 2](assets/screenshots/screenshot2.png)
@@ -30,73 +40,135 @@ A visually dynamic Chrome New Tab extension built using **p5.js**, featuring an 
 
 ## Demo
 
-> Demo GIF
-
 ![Demo](assets/screenshots/demo.gif)
 
 ---
 
-## Installation (Manual)
+## Installation
 
-1. Clone or download this repository
+1. Clone or download this repository.
 2. Open Chrome and go to:
 
-   ```
+   ```text
    chrome://extensions/
    ```
-3. Enable **Developer Mode**
-4. Click **Load unpacked**
-5. Select the project folder
+
+3. Enable Developer Mode.
+4. Click Load unpacked.
+5. Select this project folder.
+6. Open a new tab.
+
+---
+
+## Usage
+
+- Click the theme button in the top-left corner to open the theme menu.
+- Select a theme card, then click Apply.
+- Click the settings button in the top-right corner to adjust spacing and speed.
+- Click Save to keep the current theme and settings for future new tabs.
+- Click Reset to return to the default Ocean theme and default settings.
+- Click the fullscreen button in the bottom-left corner to toggle fullscreen mode.
 
 ---
 
 ## How It Works
 
-* The grid is rendered using **p5.js**
-* Mouse movement affects grid scale dynamically
-* Clicking triggers a **single expanding ripple wave**
-* Ripple temporarily overrides mouse interaction
-* UI controls update behavior via **localStorage**
+`p5.min.js` provides the p5.js drawing library.
 
----
+`sketch.js` acts as the shared theme runner. It owns the p5 lifecycle functions such as `setup()`, `draw()`, `windowResized()`, and `mousePressed()`, then forwards those calls to the currently active theme.
 
-## Customization
-
-Open settings panel (Gear icon):
-
-* **Grid Spacing** → density of grid
-* **Speed** → animation smoothness
-* **Theme** → visual color styles
+Each file inside `themes/` registers a theme through `window.registerTheme(...)`. The UI reads the registered themes and builds the theme picker automatically from them.
 
 ---
 
 ## Project Structure
 
-```
-grid-extension/
-├── index.html
-├── style.css
-├── sketch.js
-├── ui.js
-├── p5.min.js
-├── README.md
+```text
+Interactive Grid Chrome Extension/
+|-- assets/
+|   |-- screenshots/
+|   |-- theme_preview/
+|   |-- favicon.png
+|   |-- fullscreen_logo.svg
+|   |-- gear_logo.svg
+|   `-- theme_logo.svg
+|-- themes/
+|   |-- themeRegistry.js
+|   |-- interactiveGrid.js
+|   |-- bouncingBall.js
+|   |-- movingDial.js
+|   `-- rotatingBlocks.js
+|-- index.html
+|-- style.css
+|-- sketch.js
+|-- ui.js
+|-- p5.min.js
+|-- manifest.json
+|-- README.md
+`-- LICENSE
 ```
 
 ---
 
-## Future Ideas
+## Adding A New Theme
 
-* Multi-ripple system
-* Audio-reactive mode
-* Particle overlays
-* Theme presets
-* Clock/weather widgets
+1. Create a new file inside `themes/`.
+
+   ```text
+   themes/Theme.js
+   ```
+
+2. Register the theme using this format:
+
+   ```js
+   window.registerTheme({
+     id: "Theme",
+     name: "Theme",
+     previewImage: "assets/theme_preview/theme.png",
+     create: function createTheme() {
+       return {
+         setup(p, settings) {
+           // Runs when the theme starts
+         },
+
+         draw(p, settings) {
+           // Runs every frame
+           p.background(0);
+         },
+
+         windowResized(p, settings) {
+           // Optional
+         },
+
+         mousePressed(p, settings) {
+           // Optional
+         }
+       };
+     }
+   });
+   ```
+
+3. Add a preview image inside:
+
+   ```text
+   assets/theme_preview/theme.png
+   ```
+
+4. Load your theme in `index.html` before `sketch.js`:
+
+   ```html
+   <script src="themes/Theme.js"></script>
+   ```
+
+5. Refresh the extension. Your theme should appear in the theme picker.
+
+Important: do not define global `setup()` or `draw()` functions in theme files. Use `setup(p, settings)` and `draw(p, settings)` inside `window.registerTheme(...)` instead.
 
 ---
 
 ## Author
 
-Built by Karan Vishwakarma </br> as a creative coding + UI experiment using p5.js.
+Built by Karan Vishwakarma as a creative coding and UI experiment using p5.js.
 
 ---
 
