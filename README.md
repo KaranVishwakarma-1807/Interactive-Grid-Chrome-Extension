@@ -40,7 +40,9 @@ A creative Chrome New Tab extension built with HTML, CSS, JavaScript, and p5.js.
 
 ## Demo
 
-![Demo](assets/screenshots/demo.gif)
+<p align="center">
+  <img src="assets/screenshots/demo.gif" width="250"/>
+</p>
 
 ---
 
