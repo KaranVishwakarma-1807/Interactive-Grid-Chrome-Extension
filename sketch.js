@@ -50,6 +50,7 @@ function applyActiveTheme() {
     return;
   }
 
+  angleMode(RADIANS);
   activeTheme = theme.create();
 
   if (activeTheme.setup) {

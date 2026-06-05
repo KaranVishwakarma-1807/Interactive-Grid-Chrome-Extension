@@ -26,6 +26,7 @@ A creative Chrome New Tab extension built with HTML, CSS, JavaScript, and p5.js.
 - Bouncing Ball
 - Moving Dial
 - Rotating Blocks
+- Rotating Pacman
 
 ---
 
@@ -99,7 +100,8 @@ Interactive Grid Chrome Extension/
 |   |-- interactiveGrid.js
 |   |-- bouncingBall.js
 |   |-- movingDial.js
-|   `-- rotatingBlocks.js
+|   |-- rotatingBlocks.js
+|   `-- rotatingPacman.js
 |-- index.html
 |-- style.css
 |-- sketch.js
