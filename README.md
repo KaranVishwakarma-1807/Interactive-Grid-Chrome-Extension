@@ -174,7 +174,15 @@ Important: do not define global `setup()` or `draw()` functions in theme files. 
 
 ## Author
 
-Built by Karan Vishwakarma as a creative coding and UI experiment using p5.js.
+[Built by Karan Vishwakarma as a creative coding and UI experiment using p5.js.](https://www.pattvira.com/)
+
+---
+## Credits
+
+- [Patt Vira - Learning and Theme Inspirations](https://www.pattvira.com/)
+- [Colophon Foundry - "Ndot 55" font file ](https://www.onlinewebfonts.com/download/5f21b8d13dad527377311ec2d5388bdf)</br>
+All credits for them and the resources they have provided.</br>
+It helped a lot in this project.
 
 ---
 
