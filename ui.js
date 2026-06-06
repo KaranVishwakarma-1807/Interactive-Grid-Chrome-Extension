@@ -37,6 +37,12 @@ document.addEventListener("fullscreenchange", () => {
   fullscreenBtn.classList.toggle("is-fullscreen", Boolean(document.fullscreenElement));
 });
 
+// ABOUT ME
+const portfolioUrl = "https://karanvishwakarma-1807.github.io/My_Portfolio/";
+document.getElementById("aboutMeBtn").addEventListener("click", () => {
+  window.location.href = portfolioUrl;
+});
+
 // SETTINGS TOGGLE
 const settingsBtn = document.getElementById("settingsBtn");
 const settingsPanel = document.getElementById("settingsPanel");

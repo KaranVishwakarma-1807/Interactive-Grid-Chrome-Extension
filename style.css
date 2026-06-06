@@ -60,7 +60,8 @@ body {
 #themePanel,
 #settingsBtn,
 #settingsPanel,
-#fullscreenBtn {
+#fullscreenBtn,
+#aboutMeBtn {
   z-index: 10;
 }
 
@@ -102,11 +103,63 @@ body {
   z-index: 100;
 }
 
+#aboutMeBtn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 25%;
+  color: white;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: width 220ms cubic-bezier(0.34, 1.56, 0.64, 1), border-radius 220ms ease, background 0.3s, transform 0.3s;
+  z-index: 100;
+}
+
 #settingsBtn:hover,
 #themeBtn:hover,
-#fullscreenBtn:hover {
+#fullscreenBtn:hover,
+#aboutMeBtn:hover {
   background: rgba(255,255,255,0.2);
   transform: scale(1.1);
+}
+
+#aboutMeBtn:hover {
+  width: 128px;
+  border-radius: 999px;
+  transform: scale(1.04);
+}
+
+#aboutMeBtn img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+#aboutMeBtn span {
+  opacity: 0;
+  transform: translateX(8px);
+  font-family: "Ndot-57", "Ndot 57", sans-serif;
+  transition: opacity 160ms ease, transform 180ms ease;
+}
+
+#aboutMeBtn:hover span {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 #fullscreenBtn img {
