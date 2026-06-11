@@ -21,13 +21,12 @@ A creative Chrome New Tab extension built with HTML, CSS, JavaScript, and p5.js.
 ## Included Themes
 
 - Ocean
-- Neon
-- Sunset
 - Bouncing Ball
 - Moving Dial
 - Rotating Blocks
 - Rotating Pacman
 - Tenticle
+- Collision Grid
 
 ---
 
@@ -36,7 +35,6 @@ A creative Chrome New Tab extension built with HTML, CSS, JavaScript, and p5.js.
 ![Screenshot 1](assets/screenshots/screenshot1.png)
 ![Screenshot 2](assets/screenshots/screenshot2.png)
 ![Screenshot 3](assets/screenshots/screenshot3.png)
-![Screenshot 4](assets/screenshots/screenshot4.png)
 
 ---
 
@@ -99,6 +97,7 @@ Interactive Grid Chrome Extension/
 |-- themes/
 |   |-- themeRegistry.js
 |   |-- interactiveGrid.js
+|   |-- collisionGrid.js
 |   |-- bouncingBall.js
 |   |-- movingDial.js
 |   |-- rotatingBlocks.js
