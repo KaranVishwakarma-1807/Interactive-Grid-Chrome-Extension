@@ -128,21 +128,3 @@ window.registerTheme({
     return createInteractiveGridTheme("ocean");
   }
 });
-
-window.registerTheme({
-  id: "neon",
-  name: "Neon",
-  previewImage: "assets/theme_preview/neon.png",
-  create: function createTheme() {
-    return createInteractiveGridTheme("neon");
-  }
-});
-
-window.registerTheme({
-  id: "sunset",
-  name: "Sunset",
-  previewImage: "assets/theme_preview/sunset.png",
-  create: function createTheme() {
-    return createInteractiveGridTheme("sunset");
-  }
-});
